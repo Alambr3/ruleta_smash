@@ -30,6 +30,8 @@ body {
 .partsup p {
   color: aliceblue;
   font-size: 30px;
+  margin-left: 5px;
+  font-weight: bold;
 }
 
 .puntero {
