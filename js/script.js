@@ -1,10 +1,10 @@
 const personajes = [
-  "Uniojo", "Maestro Gatuno", "Molly", "Nui", "Parfait", "Peter", "Rapunzel",
+  "Calabaza", "Maestro Gatuno", "Molly", "Nui", "Parfait", "Peter", "Rapunzel",
   "Ravi", "Wukong", "Zepeta", "Alí", "Caperucita", "Kurenai", "Lobo Feroz", "Nieves",
   "Aoi", "Brick", "Ceni", "Don Quijote", "Kaiser", "Maya", "Timun", "Yong Yong",
   "Fulgor", "Garfio", "Gumi", "Ovinus", "Robin", "Alicia", "Octavia", "Reina Bruja",
   "Ricitos", "Lauren y Vex", "Patita y Cisne", "Víctor", "Hammelin", "Pinocho",
-  "Briar", "Woochi", "Narsha", "Marina", "Javert", "Proc"
+  "Briar", "Woochi", "Narsha", "Marina", "Javert", "Proc", "Sra Lettuse"
 ];
 
 const lugares = ["Touchdown/Combate Duo", "Combate Equipo/Corona", "Dominio", "Touchdown/Combate Equipo"];
@@ -12,7 +12,6 @@ const lugares = ["Touchdown/Combate Duo", "Combate Equipo/Corona", "Dominio", "T
 let giroActual = 0;
 let resultado1 = null;
 let resultado2 = null;
-let vuelta = 0;
 
 const canvas = document.getElementById("ruleta");
 const ctx = canvas.getContext("2d");
