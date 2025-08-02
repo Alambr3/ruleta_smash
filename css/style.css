@@ -5,10 +5,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-}
-
-.botones-superiores {
-  margin-bottom: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 .ruleta-container {
@@ -25,6 +23,8 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 12px 120px 0px 8px rgba(0,0,0,0.70) inset;
+  padding: 0px 15px;
 }
 
 .partsup p {
