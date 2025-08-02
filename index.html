@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruleta de Personajes</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="partsup">
+    <h1>Ruleta de Personajes</h1>
+    <div class="botones-superiores">
+      <button id="verRuletaBtn">Ruleta</button>
+      <button id="verEstadisticasBtn">Estadísticas</button>
+    </div>
+    <div>
+      <ul class="menu">
+        <li><a href="#">STATS</a>
+        <ul>
+          <li><a href="#">Descargar</a></li>
+          <li><input type="file" id="cargarArchivo" accept="application/json"></li>
+        </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="seccionRuleta">
+    <div class="ruleta-container">
+      <div class="puntero abajo"></div>
+      <canvas id="ruleta" width="400" height="400"></canvas>
+      <button id="girarBtn">Girar Ruleta</button>
+    </div>
+   </div>
+
+   <div class=partinf></div>
+      <div class="resultado" id="resultado"></div>
+      <div class="batalla" style="display:none">
+        <label>¿Ganaste la batalla?</label>
+        <button id="btnGano">Sí</button>
+        <button id="btnPerdio">No</button>
+      </div>
+    
+
+  <div id="seccionEstadisticas" style="display:none">
+    <div><h2>Estadísticas</h2></div>
+    <div><label for="filtroPersonaje">Filtrar por personaje:</label>
+    <select id="filtroPersonaje">
+      <option value="">Todos</option>
+    </select></div>
+    <div><label for="filtroLugar">Filtrar por lugar:</label>
+    <select id="filtroLugar">
+      <option value="">Todos</option>
+    </select></div>
+    <div id="tablaEstadisticas"></div>
+  </div>
+
+  <audio id="audio">
+    <source src="https://www.soundjay.com/button/sounds/button-10.mp3" type="audio/mp3">
+  </audio>
+
+ <script src="./js/script.js"></script>
+  <script src="./js/historial.js"></script>
+  <script>
+    window.addEventListener('load', () => {
+      fetch('datos.json')
+        .then(res => res.json())
+        .then(data => {
+          data.forEach(d => agregarHistorial(d));
+        })
+        .catch(err => console.log("No se pudo cargar el historial: ", err));
+    });
+
+    document.getElementById('cargarArchivo').addEventListener('change', (event) => {
+      const archivo = event.target.files[0];
+      if (archivo) {
+        const lector = new FileReader();
+        lector.onload = function(e) {
+          try {
+            const datos = JSON.parse(e.target.result);
+            datos.forEach(d => agregarHistorial(d));
+            alert("Historial cargado correctamente.");
+          } catch (err) {
+            alert("Error al cargar el archivo JSON");
+          }
+        };
+        lector.readAsText(archivo);
+      }
+    });
+
+    document.getElementById('descargarBtn').addEventListener('click', () => {
+      descargarHistorial();
+    });
+
+    document.getElementById('limpiarBtn').addEventListener('click', () => {
+      if (confirm("¿Estás seguro de que querés borrar el historial?")) {
+        limpiarHistorial();
+      }
+    });
+  </script>
+</body>
+</html>

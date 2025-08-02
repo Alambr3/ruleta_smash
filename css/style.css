@@ -1,0 +1,114 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-image: url("../img/back1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.botones-superiores {
+  margin-bottom: 0px;
+}
+
+.ruleta-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 30px auto;
+}
+
+.partsup { 
+  background-image: url("../img/top.png");
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.puntero {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  position:initial;
+  left: 50%;
+  transform: translateX(170px);
+  z-index: 10;;
+  margin-bottom: 3px;
+}
+
+.puntero.abajo {
+  border-top: 30px solid red;
+  top: 400px;
+}
+
+.resultado {
+  margin-top: 70px;
+  display: flex;
+  justify-content:center;
+  flex-wrap: wrap;
+}
+
+.resultado p {
+  margin: 20px;
+  color: aliceblue;
+  font-size: 30px;
+  background-color: black;
+  gap: 10px;
+}
+
+.resultado img {
+  width: 200px;
+  margin-top: 0px;
+  background-color: black;
+  gap: 10px;
+}
+
+#girarBtn, #verRuletaBtn, #verEstadisticasBtn, #btnGano, #btnPerdio, #descargarBtn, #limpiarBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 5px;
+  background-color: #01442e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="file"] {
+  margin-left: 10px;
+}
+
+
+/* menu desplegable */
+
+.menu > li {
+			float:none;
+			}
+			
+			.menu li a {
+				background-color:#0401e2;
+				color:#fff;
+				text-decoration:none;
+				padding:10px 12px;
+				display:static;
+			}
+			
+			.menu li a:hover {
+				background-color:#372cd1;
+			}
+			
+			.menu li ul {
+				display:none;
+				position:static;
+				min-width:10px;
+			}
+			
+			.menu li:hover > ul {
+				display:block;
+			}
+      
+      ul, ol {
+				list-style:none;
+			}
