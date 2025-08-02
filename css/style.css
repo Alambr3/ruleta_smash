@@ -19,11 +19,17 @@ body {
 }
 
 .partsup { 
-  background-image: url("../img/top.png");
+  border-bottom: 4px black;
+  border-bottom-style: ridge;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.partsup p {
+  color: aliceblue;
+  font-size: 30px;
 }
 
 .puntero {
